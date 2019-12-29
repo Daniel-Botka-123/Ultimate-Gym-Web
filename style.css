@@ -1,0 +1,422 @@
+/* *** GLOBAL CSS *** */
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(220, 220, 220); /* Set to put bg in gallery grey */
+}
+
+.title_generic {
+    font-size: 8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+nav a:hover {
+    color: rgba(0, 123, 255, 0.8) !important;
+}
+
+/* PHONE ZOOM DISABLE */
+
+@viewport {
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+@-ms-viewport {
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+/* *** NAVIGATION *** */
+
+.navbar {
+    padding: 2.5rem 5rem 2.5rem 5rem;
+    font-size: 1.8rem;
+    border-bottom: 0.2rem rgb(0, 123, 255) solid;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 0 2rem 0 rgba(0, 123, 255, 0.75);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-brand {
+    margin-right: 17.5rem;
+    font-size: 2.5rem;
+    color:rgb(0, 123, 255) !important;
+}
+
+.nav-item {
+    margin-right: 7.5rem;
+    color: rgb(255, 255, 255) !important;
+    text-transform: uppercase;    
+}
+
+/* *** HERO SECTION *** */
+
+#hero {
+    background-image: url("images/hero_ultimate.jpg"); 
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero_title {
+    color: white;
+    padding-top: 22.5%;
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.75);
+
+    /* Move in Left */
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: case-in;
+}
+
+/* *** OUR OFFER SECTION *** */
+
+#our_offer {
+    padding: 7.5rem;
+    background-image: url("images/about_us.jpg");
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.our_offer_div {
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    width: 65%;
+    line-height: 3rem;
+    margin-bottom: 5rem;
+}
+
+.our_offer_title {
+    color: rgb(0, 123, 255);
+    margin-bottom: 7.5rem;
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.75);
+}
+
+/* OFFER ELEMENTS */
+
+.offer_element_image {
+    height: 17.5rem;
+    border-radius: 25%;
+    margin-left: 10rem;
+}
+
+.offer_element_title {
+    color: rgb(255, 242, 0);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.offer_element_paragraph {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+}
+
+/* *** MEMBERSHIP SECTION *** */
+
+#membership {
+    padding: 7.5rem;
+    background-image: url("images/member_bg.jpeg");
+    background-position: center;
+}
+
+.membership_title {
+    margin-bottom: 7.5rem;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.75);    
+}
+
+/* *** OUR TEAM SECTION *** */
+
+#our_team {
+    background-image: linear-gradient(to right bottom,
+    rgba(0, 123, 255, 0.8),
+    rgba(255, 255, 255, 0.8)),
+    url("images/our_team_bg.jpg");    
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    padding: 7.5rem 0;
+    text-align: center;
+    margin-bottom: 7.5rem;
+}
+
+.our_team_title {
+    color: rgb(0, 0, 0);
+    background-color: gold;
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.75);
+    margin-bottom: 5rem;
+}
+
+/* CAROUSEL */
+
+.carousel_img {
+    height: 30rem;
+    width: 30rem;
+    border-radius: 100%;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+.our_team_coach_info {
+    padding-bottom: 2.5rem;
+    font-size: 1.4rem;
+}
+
+/* *** GALLERY SECTION *** */
+
+:root {
+    /* Set fade in duration */
+    --fade-time: 0.5s;
+}
+
+.container {
+    max-width: 100rem;
+    margin: auto;
+    border: #fff solid 3px;
+    background: #fff;
+}
+
+.main-img img,
+.imgs img {
+    width: 100%;
+}
+
+.imgs {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 1px;
+}
+
+.imgs img {
+    cursor: pointer;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn var(--fade-time) ease-in 1 forwards;
+}
+
+/* Media Queries */
+@media(max-width: 600px) {
+    .imgs {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* *** CONTACT SECTION *** */
+
+#contact {
+    background-image: linear-gradient(to right bottom,
+        rgba(0, 123, 255, 0.8),
+        rgba(255, 255, 255, 0.8)),
+    url("images/contact_bg.jpg");
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    padding: 7.5rem 0;
+    text-align: center;
+    margin-top: 2.5rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.contact_title {
+    color: rgb(0, 0, 0);
+    background-color: gold;
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.75);
+    margin: 5rem 0;
+}
+
+.contact_sheet {
+    text-align: left;
+    font-size: 1.6rem;
+    margin: 15rem 15rem 5rem 15rem;
+    background-color: rgba(220, 220, 220, 0.75);
+    padding: 2.5rem;
+    display: inline-block;    
+}
+
+/* *** FOOTER SECTION *** */
+
+footer {
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+/* *** KEY FRAMES *** */
+
+@keyframes moveInLeft {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }     
+}
+
+/* *** MEDIA QUERIES *** */
+
+@media (max-width: 1340px) {
+
+    .nav-item {
+        font-size: 1.4rem;
+        margin-right: 2.5rem;
+    }
+
+.our_offer_div {
+    width: 80%;
+    }
+
+.offer_element_image {
+    height: 12.5rem;
+    margin-left: 5rem;
+    }
+}
+
+/* SECOND */
+
+@media (max-width: 1175px) {
+
+    .title_generic {
+        font-size: 6rem;
+    }
+
+    .nav-item {
+        margin-right: 1.5rem;
+    }
+}
+
+/* THIRD */
+
+@media (max-width: 992px) {
+
+    .title_generic {
+        font-size: 5rem;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .hero_title {
+       padding-top: 35rem;
+    }
+
+    #our_offer {
+        text-align: center;
+        padding: 5rem 10rem;
+    }
+
+    .our_offer_div {
+        width: 100%;
+    }
+
+    .offer_element_image {
+        margin: 3rem 0 1rem 0;
+    }
+    
+    .contact_sheet {
+        margin: 15rem 5rem 5rem 5rem;
+    }
+}
+
+/* FOURTH */
+
+@media (max-width: 640px) {
+
+    body {
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .navbar {
+        position: static;
+        background-color: rgba(0, 0, 0, 1) !important;
+    }
+
+    #our_offer {
+        padding: 5rem 5rem;
+        background-image: unset;
+        background-color: rgb(0, 0, 0) !important;                
+    }
+
+    .card-title {
+        font-size: 75%;
+    }
+
+    #contact h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact_sheet {
+        margin: 15rem 0 5rem 0;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+/* FIFTH */
+
+@media (max-width: 576px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #our_offer {
+        padding: 5rem 2.5rem;
+    }
+
+    #membership {
+        padding: 7.5rem 2.5rem 5rem 2.5rem;
+    }
+
+   .card {
+       width: 100% !important;
+   }   
+}
+
+/* SIXTH */
+
+@media (max-width: 500px) {
+
+    #hero {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 2.5rem;
+    }
+
+    .navbar-brand {
+        margin-bottom: 2.5rem;
+    }    
+}
